@@ -22,9 +22,6 @@
 // this.setValue(5,7)
 // console.log(result.plus());
 
-
-
-
 //2
 
 // function Foo() {
@@ -50,25 +47,96 @@
 // // result.isDigit(8,9)
 // result.isPrime(7,6);
 
-
-
 //3
-const input = document.getElementsByClassName("input")[0]
-const login = document.getElementsByClassName("login")[0]
-const sand = document.getElementsByClassName("sand")[0]
-const showList = document.getElementsByClassName("show-list")[0]
-const remove = document.getElementsByClassName("remove")[0]
+// const input = document.getElementsByClassName("input")[0]
+// const login = document.getElementsByClassName("login")[0]
+// const sand = document.getElementsByClassName("sand")[0]
+// const showList = document.getElementsByClassName("show-list")[0]
+// const remove = document.getElementsByClassName("remove")[0]
+// const reload = document.getElementsByClassName("reload")[0]
+
+// login.addEventListener('click', function(){
+// if(input.value.trim()){
+//     showList.innerHTML = input.value
+//     showList.style.display = 'block'
+// }
+// })
+
+// remove.addEventListener("click", function(){
+//     if(showList.innerHTML){
+//         showList.style.display = 'none'
+//     }
+// })
+
+// sand.addEventListener("click", function(){
+//     if(showList.innerHTML){
+//         localStorage.setItem('login', showList.innerHTML)
+//     }
+// })
+// reload.addEventListener("click", function(){
+//     localStorage.removeItem("login")
+// })
 
 
-login.addEventListener('click', function(){
-if(input.value.trim()){
-    showList.innerHTML = input.value
-    showList.style.display = 'block'
+
+
+// 4
+
+const number = document.querySelectorAll(".number");
+const operator = document.querySelectorAll(".operator");
+const equal = document.getElementsByClassName("equal")[0];
+const display = document.getElementsByClassName("display")[0];
+const clear = document.getElementsByClassName("clear")[0];
+let secondValue = "";
+let firstValue = "";
+let result = "";
+let addOperator = "";
+
+for (let i = 0; i < number.length; i++) {
+  number[i].addEventListener("click", function () {
+    console.log(number[i]);
+    if (!operator.value) {
+      display.value = +number[i].innerText;
+      firstValue = display.value;
+    } else {
+      display.value = +number[i].innerText;
+      secondValue = display.value;
+    }
+  });
 }
-})
-
-remove.addEventListener("click", function(){
-    if(showList.innerHTML){
-        showList.style.display = 'none'
+for(let j = 0; j < operator.length; j++){
+operator[j].addEventListener('click', function(){
+    if(operator[j]){
+        display.value = ''
+        addOperator = operator[j].innerHTML
     }
 })
+}
+
+equal.addEventListener('click', function(){
+    if(addOperator === '+'){
+        result = firstValue + secondValue
+    }
+    if(addOperator === '-'){
+        result = firstValue - secondValue
+    }
+    if(addOperator === '/'){
+        result = firstValue / secondValue
+    }
+    if(addOperator === '*'){
+        result = firstValue * secondValue
+    }
+    display.value === result
+    firstValue = result
+    secondValue = ''
+    addOperator = ''
+
+    })
+
+    clear.addEventListener('click', function(){
+        display.value = ''
+        firstValue = ''
+        secondValue = ''
+        result = ''
+        addOperator = ''
+    })
