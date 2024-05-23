@@ -80,63 +80,143 @@
 
 
 
-// 4
+// 4 chi doesnt work???
 
-const number = document.querySelectorAll(".number");
-const operator = document.querySelectorAll(".operator");
-const equal = document.getElementsByClassName("equal")[0];
-const display = document.getElementsByClassName("display")[0];
-const clear = document.getElementsByClassName("clear")[0];
-let secondValue = "";
-let firstValue = "";
-let result = "";
-let addOperator = "";
+// const number = document.querySelectorAll(".number button");
+// const operator = document.querySelectorAll(".operator button");
+// const equal = document.getElementsByClassName("equal")[0];
+// const display = document.getElementsByClassName("display")[0];
+// const clear = document.getElementsByClassName("clear")[0];
+// let secondValue = "";
+// let firstValue = "";
+// let result = "";
+// let addOperator = "";
 
-for (let i = 0; i < number.length; i++) {
-  number[i].addEventListener("click", function () {
-    console.log(number[i]);
-    if (!operator.value) {
-      display.value = +number[i].innerText;
-      firstValue = display.value;
-    } else {
-      display.value = +number[i].innerText;
-      secondValue = display.value;
-    }
-  });
-}
-for(let j = 0; j < operator.length; j++){
-operator[j].addEventListener('click', function(){
-    if(operator[j]){
-        display.value = ''
-        addOperator = operator[j].innerHTML
-    }
+// for (let i = 0; i < number.length; i++) {
+//   number[i].addEventListener("click", function () {
+//     console.log(number[i]);
+//     if (!addOperator) {
+//       display.innerHTML = +number[i].innerText;
+//       firstValue = +number[i].innerText
+//     } else {
+//       display.innerHTML = +number[i].innerText;
+//       secondValue = +number[i].innerText
+//     }
+//   });
+// }
+// for(let j = 0; j < operator.length; j++){
+// operator[j].addEventListener('click', function(){
+//     if(operator[j]){
+//         display.innerHTML = ''
+//         addOperator = operator[j].innerHTML
+//     }
+// })
+// }
+
+// equal.addEventListener('click', function(){
+//     if(addOperator === '+'){
+//         result = firstValue + secondValue
+//     }
+//     if(addOperator === '-'){
+//         result = firstValue - secondValue
+//     }
+//     if(addOperator === '/'){
+//         result = firstValue / secondValue
+//     }
+//     if(addOperator === '*'){
+//         result = firstValue * secondValue
+//     }
+//     display.innerHTML = result
+//     firstValue = result
+//     secondValue = ''
+//     addOperator = ''
+
+//     })
+
+//     clear.addEventListener('click', function(){
+//         display.innerHTML = ''
+//         firstValue = ''
+//         secondValue = ''
+//         result = ''
+//         addOperator = ''
+//     })
+
+
+
+
+
+// 5 ???? input dashtum grelov txayi anun petqa avtomat bolor txaneri anunner@ cuyc ta p tagum nuynn axjka anvan depqum 
+
+// const boy = document.querySelectorAll('.boys button')
+// const girl = document.querySelectorAll('.girls button')
+// const input = document.getElementsByClassName('input')[0]
+// const result = document.getElementsByClassName('filter')[0]
+
+// for(let i = 0; i < boy.length; i++){
+//     boy.addEventListener('click', function(){
+//         if(boy[i].innerHTML===input.value){
+//             result.innerHTML = boy[i].innerHTML
+//         }
+//     })
+// }
+// for(let i = 0; i < girl.length; i++){
+//     girl.addEventListener('click', function(){
+//         if(girl[i].innerHTML === input.vale){
+//             result.innerHTML = girl[i].innerHTML
+//         }
+//     })
+// }
+
+// input.addEventListener('change', function(e){
+
+// })
+
+
+
+// 6
+
+const click1 = document.getElementsByClassName('click1')[0]
+const click2 = document.getElementsByClassName('click2')[0]
+const click3 = document.getElementsByClassName('click3')[0]
+const click4 = document.getElementsByClassName('click4')[0]
+const click5 = document.getElementsByClassName('click5')[0]
+
+click1.addEventListener('click', function(){
+    click1.style.display = 'block'
+    click2.style.display = 'none'
+    click3.style.display = 'none'
+    click4.style.display = 'none'
+    click5.style.display = 'none'
 })
-}
 
-equal.addEventListener('click', function(){
-    if(addOperator === '+'){
-        result = firstValue + secondValue
-    }
-    if(addOperator === '-'){
-        result = firstValue - secondValue
-    }
-    if(addOperator === '/'){
-        result = firstValue / secondValue
-    }
-    if(addOperator === '*'){
-        result = firstValue * secondValue
-    }
-    display.value === result
-    firstValue = result
-    secondValue = ''
-    addOperator = ''
+click2.addEventListener('click', function(){
+    click2.style.display = 'block'
+    click1.style.display = 'none'
+    click3.style.display = 'none'
+    click4.style.display = 'none'
+    click5.style.display = 'none'
+})
 
-    })
+click3.addEventListener('click', function(){
+    click3.style.display = 'block'
+    click1.style.display = 'none'
+    click2.style.display = 'none'
+    click4.style.display = 'none'
+    click5.style.display = 'none'
+})
 
-    clear.addEventListener('click', function(){
-        display.value = ''
-        firstValue = ''
-        secondValue = ''
-        result = ''
-        addOperator = ''
-    })
+click4.addEventListener('click', function(){
+    click4.style.display = 'block'
+    click1.style.display = 'none'
+    click3.style.display = 'none'
+    click2.style.display = 'none'
+    click5.style.display = 'none'
+})
+
+click5.addEventListener('click', function(){
+    click5.style.display = 'block'
+    click1.style.display = 'none'
+    click3.style.display = 'none'
+    click4.style.display = 'none'
+    click2.style.display = 'none'
+})
